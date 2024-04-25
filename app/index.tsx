@@ -1,21 +1,23 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Pressable } from "react-native";
+import { StyleSheet, Text, View, Button, Pressable } from "react-native";
+import { registerRootComponent } from "expo";
 import { Link, useRouter } from "expo-router";
 
-export default function App() {
+function Page() {
+  const router = useRouter();
   return (
     <View style={styles.container}>
       <View style={styles.main}>
         <Text style={styles.title}>Slicer</Text>
         <Text style={styles.subtitle}>A simple inventory manager</Text>
-        <Link href="./user/sign-up" asChild>
+        <Link href="./app/user/sign-up" asChild>
           <Pressable style={styles.button}>
             <Text style={styles.buttonText}>Get Started</Text>
           </Pressable>
         </Link>
+
         <Link href="./app/user/login" asChild>
-          <Pressable style={styles.link}>
-            <Text style={styles.subtitle}>Have an Account? Login here</Text>
+          <Pressable style={styles.button}>
+            <Text style={styles.buttonText}>Get Started</Text>
           </Pressable>
         </Link>
       </View>
@@ -70,3 +72,5 @@ const styles = StyleSheet.create({
     paddingTop: 20,
   },
 });
+
+export default registerRootComponent(Page);

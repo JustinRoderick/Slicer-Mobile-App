@@ -1,8 +1,7 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Pressable } from "react-native";
-import { Link, useRouter } from "expo-router";
+import { StyleSheet, Text, View, Button, Pressable } from 'react-native';
+import { Link } from 'expo-router';
 
-export default function App() {
+export default function Page() {
   return (
     <View style={styles.container}>
       <View style={styles.main}>
@@ -13,8 +12,8 @@ export default function App() {
             <Text style={styles.buttonText}>Get Started</Text>
           </Pressable>
         </Link>
-        <Link href="./app/user/login" asChild>
-          <Pressable style={styles.link}>
+        <Link style={styles.link} href="./user/login" asChild>
+          <Pressable>
             <Text style={styles.subtitle}>Have an Account? Login here</Text>
           </Pressable>
         </Link>
@@ -26,47 +25,47 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    padding: 24,
+    alignItems: 'center',
+    padding: 24
   },
   main: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: 'center',
     maxWidth: 960,
-    marginHorizontal: "auto",
+    marginHorizontal: 'auto'
   },
   button: {
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
     paddingVertical: 12,
     paddingHorizontal: 32,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: "black",
+    backgroundColor: 'black'
   },
   buttonText: {
     fontSize: 20,
     lineHeight: 21,
-    fontWeight: "bold",
+    fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: "white",
+    color: 'white'
   },
   title: {
-    justifyContent: "center",
+    justifyContent: 'center',
     padding: 50,
     paddingBottom: 10,
-    alignItems: "center",
+    alignItems: 'center',
     fontSize: 64,
-    fontWeight: "bold",
+    fontWeight: 'bold'
   },
   subtitle: {
     fontSize: 24,
-    color: "#1877F2",
-    paddingBottom: 30,
+    color: '#1877F2',
+    paddingBottom: 30
   },
   link: {
     fontSize: 60,
-    fontWeight: "bold",
-    paddingTop: 20,
-  },
+    fontWeight: 'bold',
+    paddingTop: 20
+  }
 });
